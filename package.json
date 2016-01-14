@@ -1,0 +1,26 @@
+{
+  "name": "cakestarter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bitcoin": "^3.0.1",
+    "bitcoinjs-lib": "^2.1.4",
+    "coinkey": "^1.4.0",
+    "commander": "^2.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cmit-hackathon-2016/cakestarter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cmit-hackathon-2016/cakestarter/issues"
+  },
+  "homepage": "https://github.com/cmit-hackathon-2016/cakestarter#readme"
+}
