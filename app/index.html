@@ -18,13 +18,20 @@
     <div><img class = "newappIcon" src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png"></div>
     <div class=header-box>CAKE starter</div>
 
-    <div class=participants-holder>
+    <div class=participants-holder ng-show="!gameOver">
         Participants:
 
         <div ng-repeat="participant in participants" ng-bind="participant.name">test</div>
     </div>
 
-    <div class="current-total">Current total: {{currentTotal}}</div>
+    <div class="current-total" ng-show="!gameOver">Current total: {{currentTotal}}</div>
+
+    <div class="gameOverContainer" ng-show="gameOver">
+        GAME OVER!
+        <div>
+            The bomb exploded on {{losingParticipant}}. You are getting the cake!
+        </div>
+    </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
     <script src="app.js"></script>
