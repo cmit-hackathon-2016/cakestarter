@@ -6,6 +6,7 @@ myApp.controller('CakeController', ['$scope', 'playerService', '$interval', func
     $scope.participants = [];
     $scope.currentTotal = 25 + 12;
     $scope.gameOver=false;
+    $scope.losingParticipant = "placeholder";
 
     function updateGameState() {
         playerService.findAll().then(function(result) {
