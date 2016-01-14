@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A sample nodejs app for Bluemix",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.14.2",
