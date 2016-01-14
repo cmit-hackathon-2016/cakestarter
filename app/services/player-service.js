@@ -1,4 +1,4 @@
-angular.service('playerService', ['$http', function($http) {
+angular.module('myApp').factory('playerService', ['$http', function($http) {
   var service = {
     findAll: function() {
       return $http.get('/players');
@@ -13,4 +13,4 @@ angular.service('playerService', ['$http', function($http) {
     }
   };
   return service;
-});
+}]);

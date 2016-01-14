@@ -1,5 +1,26 @@
 function PlayerStore() {
-  this.players = {};
+  this.players = {
+    "z": {
+        address: "z",
+        name: "Sofus"
+    },
+    "v": {
+        address: "v",
+        name: "Julian"
+    },
+    "q": {
+        address: "q",
+        name: "Nok"
+    },
+    "p": {
+        address: "p",
+        name: "Frederik"
+    },
+    "o": {
+        address: "o",
+        name: "Rune"
+    }
+  };
 }
 
 PlayerStore.prototype.all = function() {
