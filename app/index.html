@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="myApp" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="myApp" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CakeStarter</title>
+  <meta name="description" content="It's about cake.. and bombs!">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
+</head>
+<body ng-controller="CakeController">
+
+    <div ng-view></div>
+
+    <div><img class = "newappIcon" src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png"></div>
+    <div class=header-box> ROUND 1 </div>
+
+    <div class=participants-holder>
+        Participants:
+
+        <div ng-repeat="participant in participants" ng-bind="participant.name">test</div>
+    </div>
+
+    <div class="current-total">Current total: {{currentTotal}}</div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="services/player-service.js"></script>
+</body>
+</html>
