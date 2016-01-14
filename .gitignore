@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+logs/*
+!.gitkeep
+node_modules/
+bower_components/
+tmp
+.DS_Store
+.idea
+=======
+>>>>>>> initial-angular-page
 # Logs
 logs
 *.log
@@ -25,9 +37,13 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+<<<<<<< HEAD
 
 .idea/.name
 
 *.xml
 
 .idea/hackathon.iml
+=======
+>>>>>>> origin/master
+>>>>>>> initial-angular-page
