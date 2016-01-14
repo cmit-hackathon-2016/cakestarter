@@ -1,0 +1,8 @@
+applications:
+- path: .
+  memory: 256M
+  instances: 1
+  domain: bitcake.mybluemix.net
+  name: cakestarter
+  host: cakestarter
+  disk_quota: 1024M
