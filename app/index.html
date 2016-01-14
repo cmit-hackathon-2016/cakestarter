@@ -11,21 +11,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="app.css">
 </head>
-<body>
+<body ng-controller="CakeController">
 
-  <div ng-view>
+  <div ng-view></div>
 
-    <div class=header-box> ROUND 1 </div>
+  <div class=header-box> ROUND 1 </div>
 
-    <div class=participants-holder>
+  <div class=participants-holder>
       Participants:
 
-      <div ng-repeat="user in participants" ng-bind="x.name"></div>
-    </div>
-
-    <div class="current-total">Current total: + {{currentTotal}}</div>
-
+      <div ng-repeat="participant in participants" ng-bind="participant.name">test</div>
   </div>
+
+  <div class="current-total">Current total: {{currentTotal}}</div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
   <script src="app.js"></script>
