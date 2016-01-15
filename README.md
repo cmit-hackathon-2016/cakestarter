@@ -19,4 +19,10 @@ The technical solution consists of a Web Front end application and a Bitcoin nod
 <Add more details if we feel like it>
 
 ## Background
-CakeStarter was created during a Nordea CMIT Hackathon in January of 2016
+CakeStarter was created during a Nordea CMIT Hackathon in January of 2016 by
+- Julian H
+- Sofus M
+- Fredrik P
+- Nok U
+- Andrey T
+- Rune G
