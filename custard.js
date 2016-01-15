@@ -48,34 +48,22 @@ function registerEndpoints(app) {
 
 
 
-  app.get('/total', function (req, res) {
+  app.get('/status', function (req, res) {
 
       playerStore.all().then( function (players) {
         var total = 0;
         for (var i = 0; i < players.length; ++i) {
             if (players[i].hasOwnProperty('amount')) {
-                console.log(players[i]);
                 total += players[i].amount;    
             }
         }
-        req.json(total);
+        res.json({amount: total, gameOver: total >= threshold});
+      }).fail( function (err) {
+          res.json('error');
       });
   
   });
-
-  app.get('/isGameOver', function (req, res) {
-      playerStore.all().then( function (players) {
-        var total = 0;
-        for (var i = 0; i < players.length; ++i) {
-            if (players[i].hasOwnProperty('amount')) {
-                console.log(players[i]);
-                total += players[i].amount;    
-            }
-        }
-        res.json( total >= threshold );
-      });
-  });
-
+  
 }
 
 module.exports = registerEndpoints;
