@@ -24,11 +24,11 @@ function PlayerStore() {
         return deferred.promise;
     };
 
-    this.read = function (address) {
+    this.read = function (name) {
         var deferred = Q.defer();
 
         redis().then( function (cli) {
-            cli.get("players:" + address, function (err, player) {
+            cli.get("players:" + name, function (err, player) {
                 if (err) {
                     deferred.reject(err);
                 }
