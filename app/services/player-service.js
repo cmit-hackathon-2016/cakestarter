@@ -7,9 +7,7 @@ angular.module('myApp').factory('playerService', ['$http', function($http) {
       var player = {
         name: name
       };
-      return $http.post('/players', {
-        data: player
-      });
+      return $http.post('/players', player);
     }
   };
   return service;
