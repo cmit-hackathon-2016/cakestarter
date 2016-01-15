@@ -10,15 +10,10 @@ myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$
     $scope.inputAmount = .042; //Max
 
     $scope.joinGame = function() {
-
         playerService.join($scope.userName).then(function(result) {
             updateGameState();
         });
-
-     }
-
-
-
+    }
 
     function updateGameState() {
         playerService.findAll().then(function(result) {
@@ -32,7 +27,7 @@ myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$
         });
     }
 
-    $interval(updateGameState, 500);
+    $interval(updateGameState, 2000);
 
     $scope.$watchCollection("participants", function(next, prev){
         if(next == true){

@@ -30,7 +30,7 @@
 
 
     <div class=participants-holder ng-show="!gameOver">
-        <div>Current Total: {{currentTotal}} BTC</div>
+        <div>Current Total: {{currentTotal * 1000}} mBTC</div>
 
         <div class="progress">
             <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
@@ -43,7 +43,7 @@
         <table class="table">
             <tr ng-repeat="participant in participants">
                 <td>{{participant.name}} <h6>({{participant.address}})</h6></td>
-                <td>{{participant.amount}} BTC</td>
+                <td>{{participant.amount * 1000}} mBTC</td>
             </tr>
         </table>
 
