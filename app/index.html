@@ -31,13 +31,20 @@
 
 
     <div class=participants-holder ng-show="!gameOver">
-        <div>Cake Price: {{inputAmount}}</div>
-        <div>Current Total: {{currentTotal}}</div>
+        <div>Current Total: {{currentTotal}} mBTC</div>
+
+        <div class="progress">
+            <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60"
+                 aria-valuemin="0" aria-valuemax="100" style="width:{{(currentTotal / inputAmount)*100}}%">
+                {{(currentTotal / inputAmount)*100}}% Complete
+            </div>
+        </div>
+
 
         <table class="table">
             <tr ng-repeat="participant in participants">
                 <td>{{participant.name}} <h6>({{participant.address}})</h6></td>
-                <td>{{participant.amount}} BTC</td>
+                <td>{{participant.amount}} mBTC</td>
             </tr>
         </table>
 

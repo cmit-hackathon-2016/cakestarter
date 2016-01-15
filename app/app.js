@@ -4,11 +4,10 @@ var myApp = angular.module('myApp', []);
 
 myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$interval', function($scope, playerService, gameService, $interval) {
     $scope.participants = [];
-    $scope.currentTotal = 25 + 12;
+    $scope.currentTotal = 0;
     $scope.gameOver=false;
     $scope.losingParticipant = "placeholder";
-
-    $scope.inputAmount = 100;
+    $scope.inputAmount = 42; //Max
 
     $scope.joinGame = function() {
 
