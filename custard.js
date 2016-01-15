@@ -1,14 +1,13 @@
 var playerStore = require('./player-store');
 
 function registerEndpoints(app) {
-  app.get('/players', function(req, res, next) {
+  app.get('/players', function(req, res) {
     playerStore.all().then( function (players) {
         res.json(players);
-        res.end();
     });
   });
 
-  app.get('/players/:address', function(req, res, next) {
+  app.get('/players/:address', function(req, res) {
     var address = req.params.address;
     playerStore.read(address).then( function (player) {
         if (typeof player !== 'undefined') {
@@ -16,11 +15,10 @@ function registerEndpoints(app) {
         } else {
             res.status(404).json({ error : "No such player" });
         }
-        res.end();
     })
   });
-
-  app.put('/players/:address', function(req, res, next) {
+  
+  app.put('/players/:address', function(req, res) {
     var address = req.params.address;
     var player = req.body;
     player.address = address;
@@ -29,6 +27,15 @@ function registerEndpoints(app) {
         res.end();
     });
   });
+
+  app.get('/total', function (req, res) {
+      res.json(42);
+  });
+
+  app.get('/isGameOver', function (req, res) {
+      res.json(false);
+  });
+
 }
 
 module.exports = registerEndpoints;
