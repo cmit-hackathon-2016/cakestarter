@@ -1,6 +1,8 @@
 var playerStore = require('./player-store');
 var gameStore = require('./game-store');
 
+var threshold = 42;
+
 function registerEndpoints(app) {
   app.post('/games', function(req, res) {
     gameStore.createGame().then( function (game) {
@@ -44,12 +46,34 @@ function registerEndpoints(app) {
     });
   });
 
+
+
   app.get('/total', function (req, res) {
-      res.json(42);
+
+      playerStore.all().then( function (players) {
+        var total = 0;
+        for (var i = 0; i < players.length; ++i) {
+            if (players[i].hasOwnProperty('amount')) {
+                console.log(players[i]);
+                total += players[i].amount;    
+            }
+        }
+        req.json(total);
+      });
+  
   });
 
   app.get('/isGameOver', function (req, res) {
-      res.json(false);
+      playerStore.all().then( function (players) {
+        var total = 0;
+        for (var i = 0; i < players.length; ++i) {
+            if (players[i].hasOwnProperty('amount')) {
+                console.log(players[i]);
+                total += players[i].amount;    
+            }
+        }
+        res.json( total >= threshold );
+      });
   });
 
 }
