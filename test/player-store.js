@@ -17,20 +17,20 @@ describe('redis', function() {
     
     it("should save and read", () => 
       
-        expect(playerstore.save( "add0", { name: "alice" } )).to.be.fulfilled
+        expect(playerstore.save( { name: "alice", address: "add0" } )).to.be.fulfilled
             .then( () => expect(playerstore.read( "add0" )).to.eventually.have.property("name").equal("alice") )
     );
     
     it("should save and show all", () => 
         expect(
-            playerstore.save( "add10", { name: "bob" } ).then( () => 
-            playerstore.save( "add11", { name: "mac" } ))
+            playerstore.save( { name: "bob", address: "add10" } ).then( () => 
+            playerstore.save( { name: "mac", address: "add11" } ))
         ).to.be.fulfilled
         .then( () => { return expect(playerstore.all()).to.eventually.have.length.least(2)} )); 
     
     it("save and retrieve", function (done) {
         
-        playerstore.save( "add1", { name: "alice" } )
+        playerstore.save( { name: "alice", address: "add1" } )
         .then( function () {
             playerstore.all()
                 .then( function (res) {

@@ -23,7 +23,8 @@ function registerEndpoints(app) {
   app.put('/players/:address', function(req, res, next) {
     var address = req.params.address;
     var player = req.body;
-    playerStore.save(address, player).then( function (player) {
+    player.address = address;
+    playerStore.save(player).then( function (player) {
         res.json(player);
         res.end();
     });
