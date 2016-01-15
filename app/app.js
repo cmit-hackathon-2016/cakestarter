@@ -5,7 +5,7 @@ var myApp = angular.module('myApp', []);
 myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$interval', function($scope, playerService, gameService, $interval) {
     $scope.participants = [];
     $scope.currentTotal = 0;
-    $scope.gameOver=false;
+    $scope.gameOver = false;
     $scope.losingParticipant = "placeholder";
     $scope.inputAmount = 42; //Max
 
@@ -25,12 +25,9 @@ myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$
             $scope.participants = result.data;
         });
 
-        gameService.getTotal().then(function(result) {
-            $scope.currentTotal = result.data;
-        });
-
-        gameService.isGameOver().then(function(result){
-           $scope.gameOver = result.data;
+        gameService.status().then(function(status) {
+            $scope.currentTotal = status.amount;
+            $scope.gameOver = status.gameOver;
         });
     }
 
