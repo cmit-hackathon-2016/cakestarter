@@ -8,15 +8,7 @@ myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$
     $scope.gameOver=false;
     $scope.losingParticipant = "placeholder";
 
-    $scope.inputAmount = 0;
-    $scope.enableCreate = true;
-
-    $scope.createGame = function() {
-        if( $scope.inputAmount > 0 ) {
-            $scope.enableCreate = false;
-        }
-
-    }
+    $scope.inputAmount = 100;
 
     $scope.joinGame = function() {
 
@@ -63,7 +55,6 @@ myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$
         if($scope.gameOver === true){
             var audio = new Audio('audio_file.mp3'); //play some sound when bomb explodes
             audio.play();
-            $scope.enableCreate = true;
         }
     });
 }]);

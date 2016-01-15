@@ -31,18 +31,15 @@
 
 
     <div class=participants-holder ng-show="!gameOver">
-        <form class="form-signin" ng-submit="createGame()">
-            <h2 class="form-signin-heading">Minimum amount: {{inputAmount}}</h2>
-            <div ng-show="enableCreate">
-                <label for="inputAmount" class="sr-only">Minimum amount</label>
-                <input type="number" id="inputAmount" class="form-control" ng-model="inputAmount" required autofocus>
-                <button class="btn btn-lg btn-primary btn-block" type="submit">Enter</button>
-            </div>
-        </form>
-        Participants:
+        <div>Cake Price: {{inputAmount}}</div>
+        <div>Current Total: {{currentTotal}}</div>
 
-        <div ng-repeat="participant in participants" ng-bind="participant.name">
-        </div>
+        <table class="table">
+            <tr ng-repeat="participant in participants">
+                <td>{{participant.name}} <h6>({{participant.address}})</h6></td>
+                <td>{{participant.amount}} BTC</td>
+            </tr>
+        </table>
 
         <div class="form-group">
           <form class="form-signin" ng-submit="joinGame()">
@@ -52,8 +49,6 @@
           </form>
         </div>
     </div>
-
-    <div class="current-total" ng-show="!gameOver">Current total: {{currentTotal}}</div>
 
     <div class="gameOverContainer" ng-show="gameOver">
         GAME OVER!
