@@ -34,8 +34,12 @@
         <div>Cake Price: {{inputAmount}}</div>
         <div>Current Total: {{currentTotal}}</div>
 
-        <div ng-repeat="participant in participants" ng-bind="participant.name">
-        </div>
+        <table>
+            <tr ng-repeat="participant in participants">
+                <td>{{participant.name}} <small>({{participant.address}})</small></td>
+                <td>{{participant.amount}} BTC</td>
+            </tr>
+        </table>
 
         <div class="form-group">
           <form class="form-signin" ng-submit="joinGame()">
