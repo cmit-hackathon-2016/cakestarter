@@ -34,9 +34,9 @@
         <div>Cake Price: {{inputAmount}}</div>
         <div>Current Total: {{currentTotal}}</div>
 
-        <table>
+        <table class="table">
             <tr ng-repeat="participant in participants">
-                <td>{{participant.name}} <small>({{participant.address}})</small></td>
+                <td>{{participant.name}} <h6>({{participant.address}})</h6></td>
                 <td>{{participant.amount}} BTC</td>
             </tr>
         </table>
