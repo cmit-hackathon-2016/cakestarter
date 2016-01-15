@@ -25,22 +25,9 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> Stashed changes
+
+typings
 
 .idea/.name
-
 *.xml
-
 .idea/hackathon.iml
-<<<<<<< Updated upstream
-=======
-=======
->>>>>>> origin/master
->>>>>>> initial-angular-page
-=======
->>>>>>> parent of 79fd8f2... ignore xml files
->>>>>>> Stashed changes

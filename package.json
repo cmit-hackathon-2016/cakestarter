@@ -3,12 +3,19 @@
   "version": "0.0.1",
   "description": "A sample nodejs app for Bluemix",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "mocha"
   },
   "dependencies": {
     "body-parser": "^1.14.2",
     "cfenv": "1.0.x",
-    "express": "4.12.x"
+    "chai": "^3.4.1",
+    "chai-as-promised": "^5.2.0",
+    "express": "4.12.x",
+    "lodash": "^4.0.0",
+    "mocha": "^2.3.4",
+    "q": "^1.4.1",
+    "redis": "^2.4.2"
   },
   "repository": {},
   "engines": {
