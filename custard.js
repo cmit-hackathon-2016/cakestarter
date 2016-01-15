@@ -1,6 +1,13 @@
 var playerStore = require('./player-store');
+var gameStore = require('./game-store');
 
 function registerEndpoints(app) {
+  app.post('/games', function(req, res) {
+    gameStore.createGame().then( function (game) {
+        res.json(game);
+    });
+  });
+
   app.get('/players', function(req, res) {
     playerStore.all().then( function (players) {
         res.json(players);
