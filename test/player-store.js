@@ -13,12 +13,12 @@ var expect = chai.expect;
 var playerstore = require('../player-store');
 
 describe('redis', function() {
-    this.timeout(5000);
+    this.timeout(20000);
     
     it("should save and read", () => 
       
         expect(playerstore.save( { name: "alice", address: "add0" } )).to.be.fulfilled
-            .then( () => expect(playerstore.read( "add0" )).to.eventually.have.property("name").equal("alice") )
+            .then( () => expect(playerstore.read( "alice" )).to.eventually.have.property("name").equal("alice") )
     );
     
     it("should save and show all", () => 
