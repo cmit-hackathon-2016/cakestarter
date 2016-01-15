@@ -13,7 +13,7 @@ redis().then( function (cli) {
             
             cli.del( e, function () {
                 deferred.resolve();
-            })
+            });
             
             return deferred.promise;
         }) ).then( function () {

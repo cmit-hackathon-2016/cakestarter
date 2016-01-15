@@ -1,7 +1,7 @@
 var playerStore = require('./player-store');
 var gameStore = require('./game-store');
 
-var threshold = 42;
+var threshold = 0.042;
 
 function registerEndpoints(app) {
   app.post('/games', function(req, res) {
