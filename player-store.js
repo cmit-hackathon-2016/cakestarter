@@ -91,9 +91,9 @@ function PlayerStore() {
         var deferred = Q.defer();
 
         redis().then( function (cli) {
-            cli.sadd('players', player.address, function (err) {
+            cli.sadd('players', player.name, function (err) {
 
-                cli.set( 'players:' + player.address, JSON.stringify(player), function (err) {
+                cli.set( 'players:' + player.name, JSON.stringify(player), function (err) {
                     if (err) {
                         deferred.reject(err);
                     }
