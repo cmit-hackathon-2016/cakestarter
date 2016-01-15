@@ -4,7 +4,8 @@
   "description": "A sample nodejs app for Bluemix",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha"
+    "test": "mocha",
+    "setup_demo": "node scripts/setup_demo.js"
   },
   "dependencies": {
     "body-parser": "^1.14.2",

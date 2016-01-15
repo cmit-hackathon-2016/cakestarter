@@ -13,8 +13,10 @@ var expect = chai.expect;
 var playerstore = require('../player-store');
 
 describe('redis', function() {
-  
+    this.timeout(5000);
+    
     it("should save and read", () => 
+      
         expect(playerstore.save( "add0", { name: "alice" } )).to.be.fulfilled
             .then( () => expect(playerstore.read( "add0" )).to.eventually.have.property("name").equal("alice") )
     );
