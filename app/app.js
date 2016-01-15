@@ -7,7 +7,7 @@ myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$
     $scope.currentTotal = 0;
     $scope.gameOver = false;
     $scope.losingParticipant = "placeholder";
-    $scope.inputAmount = 42; //Max
+    $scope.inputAmount = .042; //Max
 
     $scope.joinGame = function() {
 
