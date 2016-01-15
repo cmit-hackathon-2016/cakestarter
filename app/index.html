@@ -28,8 +28,6 @@
     <div><img class = "newappIcon" src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png"></div>
     <div class=header-box>CAKE starter</div>
 
-
-
     <div class=participants-holder ng-show="!gameOver">
         <div>Current Total: {{currentTotal}} mBTC</div>
 
@@ -57,11 +55,8 @@
         </div>
     </div>
 
-    <div class="gameOverContainer" ng-show="gameOver">
+    <div class="gameOverContainer alert alert-warning banner-middle" role="alert" ng-show="gameOver">
         GAME OVER!
-        <div>
-            The bomb exploded on {{losingParticipant}}. You are getting the cake!
-        </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.js"></script>
