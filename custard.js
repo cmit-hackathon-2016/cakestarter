@@ -24,7 +24,26 @@ function registerEndpoints(app) {
     player.address = address;
     playerStore.save(player).then( function (player) {
         res.json(player);
-        res.end();
+    });
+  });
+
+  app.put('/players/:address/targets/:target', function(req, res) {
+    var address = req.params.address;
+    var target  = req.params.target;
+    
+    playerStore.read(address).then( function (player) {
+        player.targets = target;
+        playerStore.save(player).then( function () {
+            res.end();    
+        } );
+    }).fail( function (err) {
+        console.log('error: ', err)
+    });
+    
+    var player = req.body;
+    player.address = address;
+    playerStore.save(player).then( function (player) {
+        res.json(player);
     });
   });
 
