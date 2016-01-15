@@ -34,3 +34,8 @@ body,html {
 	padding-top: 20px;
 	font-size: 25px;
 }
+
+.banner-middle{
+    padding-left: 500px;
+    padding-right: 500px;
+}
