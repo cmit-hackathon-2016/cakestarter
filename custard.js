@@ -17,7 +17,7 @@ function registerEndpoints(app) {
         }
     })
   });
-  
+
   app.put('/players/:address', function(req, res) {
     var address = req.params.address;
     var player = req.body;
@@ -30,16 +30,16 @@ function registerEndpoints(app) {
   app.put('/players/:address/targets/:target', function(req, res) {
     var address = req.params.address;
     var target  = req.params.target;
-    
+
     playerStore.read(address).then( function (player) {
         player.targets = target;
         playerStore.save(player).then( function () {
-            res.end();    
+            res.end();
         } );
     }).fail( function (err) {
         console.log('error: ', err)
     });
-    
+
     var player = req.body;
     player.address = address;
     playerStore.save(player).then( function (player) {
