@@ -3,8 +3,13 @@ angular.module('myApp').factory('playerService', ['$http', function($http) {
     findAll: function() {
       return $http.get('/players');
     },
-    join: function() {
-      return $http.post('/players');
+    join: function(name) {
+      var player = {
+        name: name
+      };
+      return $http.post('/players', {
+        data: player
+      });
     }
   };
   return service;
