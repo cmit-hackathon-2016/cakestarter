@@ -43,7 +43,7 @@
         <table class="table">
             <tr ng-repeat="participant in participants">
                 <td>{{participant.name}} <h6>({{participant.address}})</h6></td>
-                <td>{{((participant.amount != 'NaN')) ?  (participant.amount * 1000) : ''}} mBTC</td>
+                <td>{{isNumber(participant.amount) ?  (participant.amount * 1000) : ''}} mBTC</td>
             </tr>
         </table>
 
