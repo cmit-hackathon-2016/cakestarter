@@ -16,7 +16,7 @@ function PlayerStore() {
                     deferred.reject(err);
                 }
                 else {
-                    Q.all( _.map( reply, context.read ) ).then( result => deferred.resolve(result) )
+                    Q.all( _.map( reply, context.read ) ).then( result => deferred.resolve(_.filter(result, _.isObjectLike)) )
                 }
             });
         } );
