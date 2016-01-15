@@ -9,7 +9,17 @@
   <title>CakeStarter</title>
   <meta name="description" content="It's about cake.. and bombs!">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="stylesheets/style.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+    <!-- Custom styles for this template -->
+    <link href="stylesheets/create.css" rel="stylesheet">
+    <link rel="stylesheet" href="stylesheets/style.css">
+
 </head>
 <body ng-controller="CakeController">
 
@@ -18,7 +28,17 @@
     <div><img class = "newappIcon" src="https://en.bitcoin.it/w/images/en/2/29/BC_Logo_.png"></div>
     <div class=header-box>CAKE starter</div>
 
+
+
     <div class=participants-holder ng-show="!gameOver">
+        <form class="form-signin" ng-submit="createGame()">
+            <h2 class="form-signin-heading">Minimum amount: {{inputAmount}}</h2>
+            <div ng-show="enableCreate">
+                <label for="inputAmount" class="sr-only">Minimum amount</label>
+                <input type="number" id="inputAmount" class="form-control" ng-model="inputAmount" required autofocus>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Enter</button>
+            </div>
+        </form>
         Participants:
 
         <div ng-repeat="participant in participants" ng-bind="participant.name">test</div>
