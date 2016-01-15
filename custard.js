@@ -14,24 +14,14 @@ function registerEndpoints(app) {
     });
   });
 
-  app.get('/players/:address', function(req, res) {
-    var address = req.params.address;
-    playerStore.read(address).then( function (player) {
-        if (typeof player !== 'undefined') {
+  app.post('/players', function(req, res) {
+    if (req.body.name) {
+        playerStore.join(req.body.name).then( function (player) {
             res.json(player);
-        } else {
-            res.status(404).json({ error : "No such player" });
-        }
-    })
-  });
-
-  app.put('/players/:address', function(req, res) {
-    var address = req.params.address;
-    var player = req.body;
-    player.address = address;
-    playerStore.save(player).then( function (player) {
-        res.json(player);
-    });
+        });
+    } else {
+        res.status(400).json({ error: "Player missing name property" });
+    }
   });
 
   app.put('/players/:address/targets/:target', function(req, res) {

@@ -41,6 +41,32 @@ function PlayerStore() {
         return deferred.promise;
     }
 
+    this.join = function (name) {
+        var deferred = Q.defer();
+
+        redis().then(function(cli) {
+            cli.sadd('players', name, function (err, reply) {
+                var player = {
+                    name: name
+                };
+                if (reply == 1) {
+                    cli.set( 'players:' + name, JSON.stringify(player), function (err) {
+                        if (err) {
+                            deferred.reject(err);
+                        }
+                        else {
+                            deferred.resolve(player);
+                        }
+                    });
+                } else {
+                    deferred.reject("Player " + name + " already joined");
+                }
+            });
+        });
+
+        return deferred.promise;
+    }
+
     this.reset = function () {
         var deferred = Q.defer();
 
