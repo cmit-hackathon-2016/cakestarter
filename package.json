@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node server.js",
     "test": "mocha",
-    "setup_demo": "node scripts/setup_demo.js"
+    "setup_demo": "node scripts/setup_demo.js",
+    "wipe": "node scripts/wipe.js"
   },
   "dependencies": {
     "body-parser": "^1.14.2",
