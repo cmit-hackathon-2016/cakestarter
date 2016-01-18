@@ -16,12 +16,11 @@ myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$
     }
 
     function updateGameState() {
-        playerService.findAll().then(function(result) {
-            $scope.participants = result.data;
+        playerService.findAll().then(function(players) {
+            $scope.participants = players;
         });
 
-        gameService.status().then(function(result) {
-            var status = result.data;
+        gameService.status().then(function(status) {
             $scope.currentTotal = status.amount;
             $scope.gameOver = status.gameOver;
         });
