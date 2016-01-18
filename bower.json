@@ -1,8 +1,8 @@
 {
-  "name": "angular-seed",
+  "name": "cakestarter",
   "description": "A starter project for AngularJS",
   "version": "0.0.0",
-  "homepage": "https://github.com/angular/angular-seed",
+  "homepage": "na",
   "license": "MIT",
   "private": true,
   "dependencies": {
@@ -10,6 +10,20 @@
     "angular-route": "~1.4.0",
     "angular-loader": "~1.4.0",
     "angular-mocks": "~1.4.0",
-    "html5-boilerplate": "~5.2.0"
-  }
+    "html5-boilerplate": "~5.2.0",
+    "angular-qr": "~0.2.0"
+  },
+  "authors": [
+    "julian@studio42.dk"
+  ],
+  "main": "",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "app/bower_components",
+    "test",
+    "tests"
+  ]
 }

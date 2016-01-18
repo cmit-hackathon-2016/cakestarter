@@ -1,6 +1,6 @@
 'use strict';
 
-var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', ['ja.qr']);
 
 myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$interval', function($scope, playerService, gameService, $interval) {
     $scope.participants = [];
@@ -8,12 +8,17 @@ myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$
     $scope.gameOver = false;
     $scope.losingParticipant = "placeholder";
     $scope.inputAmount = .042; //Max
+    
+    $scope.qrCode = null;
+    $scope.setQR = function (qrCode) {
+        $scope.qrCode = qrCode;
+    };
 
     $scope.joinGame = function() {
         playerService.join($scope.userName).then(function(result) {
             updateGameState();
         });
-    }
+    };
 
     function updateGameState() {
         playerService.findAll().then(function(players) {
@@ -25,6 +30,8 @@ myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$
             $scope.gameOver = status.gameOver;
         });
     }
+
+    updateGameState();
 
     $interval(updateGameState, 2000);
 
