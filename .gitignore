@@ -28,6 +28,5 @@ node_modules
 
 typings
 
-.idea/.name
+.idea/
 *.xml
-.idea/hackathon.iml
