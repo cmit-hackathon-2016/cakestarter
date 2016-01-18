@@ -35,24 +35,4 @@ myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$
 
     $interval(updateGameState, 2000);
 
-    $scope.$watchCollection("participants", function(next, prev){
-        if(next == true){
-            var audio = new Audio('audio_file.mp3'); //play some audio when new player joins
-            audio.play();
-        }
-    });
-
-    $scope.$watch("currentTotal", function(next, prev){
-        if(next >= prev){
-            var audio = new Audio('audio_file.mp3'); //play some audio when pool increases (someone pays bitcoins)
-            audio.play();
-        }
-    });
-
-    $scope.$watch("gameOver", function(){
-        if($scope.gameOver === true){
-            var audio = new Audio('audio_file.mp3'); //play some sound when bomb explodes
-            audio.play();
-        }
-    });
 }]);
