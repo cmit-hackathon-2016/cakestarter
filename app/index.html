@@ -41,7 +41,7 @@
 
 
         <table class="table">
-            <tr ng-repeat="participant in participants">
+            <tr ng-repeat="participant in participants track by participant.name">
                 <td>{{participant.name}} <h6>({{participant.address}})</h6></td>
                 <td>{{participant.amount * 1000}} mBTC</td>
             </tr>
