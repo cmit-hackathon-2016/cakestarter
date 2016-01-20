@@ -28,6 +28,7 @@ myApp.controller('CakeController', ['$scope', 'playerService', 'gameService', '$
         gameService.status().then(function(status) {
             $scope.currentTotal = status.amount;
             $scope.gameOver = status.gameOver;
+            $scope.cheapAss = status.cheapAss;
         });
     }
 
