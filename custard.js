@@ -52,14 +52,26 @@ function registerEndpoints(app) {
 
       playerStore.all().then( function (players) {
         var total = 0;
+        var minAmount = -1;
+        var cheapAss = null; 
         for (var i = 0; i < players.length; ++i) {
-            if (players[i].hasOwnProperty('amount')) {
-                total += players[i].amount;    
+            var player = players[i];
+            if (player.amount) {
+                total += players[i].amount;
+                if (cheapAss === null || minAmount < player.amount) {
+                    cheapAss = player.name;
+                    minAmount = player.amount;
+                    //console.log("new best", cheapAss, minAmount)
+                }            
             }
         }
-        res.json({amount: total, gameOver: total >= threshold});
-      }).fail( function (err) {
-          res.json('error');
+        res.json({
+            amount: total,
+            gameOver: total >= threshold,
+            cheapAss: cheapAss,
+          }).fail( function (err) {
+              res.json( {error: err } );
+          });
       });
   
   });
